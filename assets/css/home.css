@@ -1,0 +1,202 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+div.all-content div.sidebar {
+    display: none;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+}
+div.main-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+div.main-content header {
+    height: 10%;
+    width: 100%;
+}
+div.main-content main {
+    height: 90%;
+    width: 100%;
+}
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+main article.carousel {
+    height: 30%;
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+main article.carousel div.carousel-nav {
+    height: 100%;
+    width: 100%;
+    margin: 0 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+main article.carousel div.carousel-nav div.nav-arrow {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+main article.carousel div.carousel-nav div.nav-arrow i {
+    margin: auto;
+}
+main article.carousel div.carousel-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main article.carousel section.img-carousel {
+    height: 100%;
+    width: 100%;
+    margin: 0 50px;
+    position: relative;
+}
+main article.carousel section.img-carousel div.img-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+main article.carousel section.img-carousel div.carousel-desc {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0, 0, 0, 0.9));
+    color: #FFFFFF;
+    border-radius: 15px;
+    padding: 0 20px;
+    padding-bottom: 5%;
+}
+main article.carousel section.img-carousel img {
+    height: 250px;
+    width: 500px;
+    border-radius: 15px;
+    position: relative;
+}
+main article.carousel section.img-carousel#carousel-main img{
+    height: 300px;
+    width: 600px;
+}
+main article.books-list {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+main article.books-list div.books-list-title h2 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+main article.books-list div.books-list-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main article.books-list div.books-list-content section.book-card {
+    height: 340px;
+    width: 320px ;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+main article.books-list div.books-list-content section.book-card div.book-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 10px;
+}
+nav {
+    height: 60px;
+    width: 100%;
+    padding: 0 20px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+nav span.sidebar-trigger a {
+    color: #000000;
+}
+nav span.nav-link:hover {
+    cursor: default;
+}
+nav span.nav-link span.dropdown-categories, nav span.nav-link span.dropdown-time {
+    margin: 0 10px;
+    position: relative;
+    display: inline-block;
+}
+nav div.categories-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+nav div.categories-content ul li {
+    list-style-type: none;
+} 
+nav span.dropdown-categories:hover + div#categories-content{
+    display: block;
+}
+nav span.dropdown-time:hover + div#time-content{
+    display: block;
+}
+nav span.nav-search input#search-input {
+    height: 35px;
+    width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #CACACA;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 0 40px;
+    font-family: FontAwesome !important;
+}
+span.dropdown {
+    margin: 0 10px;
+}
+div#time-content {
+    display: none;
+}
+div#categories-content {
+    display: none;
+}
+img#bookshelf {
+    height: 50px;
+    width: 50px;
+}
+span.nav-icon {
+    font-size: 25px;
+    font-weight: bold;
+}

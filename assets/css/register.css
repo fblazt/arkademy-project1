@@ -1,0 +1,120 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	}
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	z-index: 1;
+}
+.background {
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/mollie-sivaram-_1gBVgy8gIU-unsplash.png);
+	height: 100%;
+	width: 65%;
+	padding: 0 50px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.form-container {
+	font-family: Inter;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+	height: 100%;
+	width: 35%;
+	padding: 0 80px 0;
+}
+h1 {
+	font-size: 64px;
+	line-height: 83px;
+}
+#img-title {
+	font-family: Inter;
+	color: white;
+}
+.register-title {
+	margin-bottom: 10px;
+}
+form {
+	border-radius: 5px;
+	box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+}
+input {
+	display: block;
+	border: none;
+	box-sizing: border-box;
+	border-radius: 5px;
+	height: 40px;
+	width: 100%;
+	font-size: 20px;
+	line-height: 26px;
+}
+#icon {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	z-index: 2;
+	position: absolute;
+}
+button {
+	width: 110px;
+	height: 36px;
+}
+#btn-signup {
+	background: #000000;
+	border-radius: 5px;
+	color: white;
+}
+#btn-login {
+	background: #FFFFFF;
+	border: 1px solid #D0CCCC;
+	box-sizing: border-box;
+	border-radius: 5px;
+	color: #D0CCCC;
+}
+#button {
+	padding: 20px 0 50px;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+span {
+	color: #D0CCCC;
+}
+.label-input {
+	border: 1px solid #E0E0E0;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.form-title {
+	margin-bottom: 20px;
+	color: #424242;
+}
+label {
+	color: #D0CCCC;
+}
+#credit {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 25px;
+	color: #FFFFFF;
+}
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  div.background {
+    display: none;
+  }
+  div.form-container {
+  	width: 100%;
+  }
+}
