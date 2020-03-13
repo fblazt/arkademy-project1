@@ -109,6 +109,7 @@ main article.books-list div.books-list-title h2 {
 }
 main article.books-list div.books-list-content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
