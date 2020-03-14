@@ -73,8 +73,9 @@ div.container div.login-content main section.form-content form div {
 div.container div.login-content footer{
     height: 10%;
     margin-bottom: 5%;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-self: center;
+    width: 80%;
 }
 
 /* bakal banyak dipake */
