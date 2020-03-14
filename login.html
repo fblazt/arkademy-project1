@@ -1,70 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Inter|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/login.css">
-	</head>
-	<body>
-
-	<div class="container">
-
-		<div id="icon">
-			<img id="bookshelf" src="assets/img/bookshelf.png" alt="">	
-		</div>
-
-		<div class="background">
-			<h1 id="img-title">Book is a window to the world</h1>
-			<p id="credit">Photo by Mark Pan4ratte on Unsplash</p>
-		</div>
-
-		<div class="form-container">
-
-			<div class="row">
-
-				<div class="col">
-
-					<div class="form-title">
-						<h1 class="register-title">Login</h1>
-						<p>Welcome Back, Please Login to your account</p>
-					</div>
-
-					<div class="form">
-						
-						<form action="">
-							<div class="label-input">
-								<label for="email">Email</label>
-								<input class="textbox" type="email">
-							</div>
-							<div class="label-input">
-								<label for="password">Password</label>
-								<input class="textbox" type="password">
-							</div>
-						</form>
-
-						<div class="acc-function">
-							<input id="checkbox" type="checkbox" name="remember" value="1">Remember Me
-							<a href="#">Forgot Password</a>
-						</div>
-
-						<div id="button">
-							<a href="home.html"><button id="btn-login">Login</button></a>
-							<a href="register.html"><button id="btn-signup">Sign Up</button></a>
-						</div>
-
-					</div>
-
-					<div>
-						<span>By signing up, you agree to Book's</span>
-						<br>
-						<a href="#">Terms and Conditions</a> <span>&</span> <a href="#">Privacy Policy</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container flex-row">
+        <div class="background flex-col">
+            <h1 id="img-title" class="text-white main-font title">Book is a window to the world</h1>
+            <p id="credit" class="text-white secondary-font">Photo by Mark Pan4ratte on Unsplash</p>
+        </div>
+        <div class="login-content flex-col">
+            <header>
+                <a href="index.html">
+                    <img src="./week-1/project-1/assets/img/bookshelf.png" alt="">
+                </a>
+            </header>
+            <main class="flex-col main-font">
+                <section class="form-info">
+                    <h1 class="title text-dark-grey">Login</h1>
+                    <p class="text-dark-grey">Welcome Back, Please Login <br> to your account</p>
+                </section>
+                <section class="form-content">
+                    <form action="">
+                        <div class="flex-col">
+                            <div class="form-container">
+                                <div class="input-container flex-col">
+                                    <label for="email" class="text-grey">Email</label>
+                                    <input type="text" name="email" id="email" class="borderless-input">
+                                </div>
+                                <div class="input-container flex-col">
+                                    <label for="password" class="text-grey">Password</label>
+                                    <input type="password" name="password" id="password" class="borderless-input">
+                                </div>
+                            </div>
+                            <div class="form-confirmation flex-row">
+                                <span>
+                                    <input type="checkbox" name="remember" id="checkbox" value="1">
+                                    <label for="checkbox" class="text-grey">Remember Me</label>
+                                </span>
+                                <span>
+                                    <a href="">Forgot Password</a>
+                                </span>
+                            </div>
+                            <div>
+                                <a href="home.html" class="anchor-black"><button id="btn-login">Login</button></a>
+                                <a href="register.html" class="anchor-white text-grey"><button id="btn-register">Sign Up</button></a>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+            <footer class="flex-col main-font">
+                <div>
+                    <div class="text-grey">
+                        By signing up, you agree to Book's
+                    </div>
+                    <div>
+                        <a href="">Terms and Conditions</a> <span class="text-grey">&</span> <a href="">Privacy Policy</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
 </html>
