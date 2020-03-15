@@ -1,195 +1,46 @@
-html, body {
+html, body  {
+    width: 100%;
+    height: 100%;
     margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Montserrat';
+}
+
+div.all-content {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+
     padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
 }
-div.all-content div.sidebar {
-    display: none;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-}
-div.main-content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 0;
-}
-div.main-content header {
-    height: 10%;
-    width: 100%;
-}
-div.main-content main {
-    height: 90%;
-    width: 100%;
-}
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
-main article.carousel {
-    height: 30%;
-    width: 100%;
-    margin: 50px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-}
-main article.carousel div.carousel-nav {
-    height: 100%;
-    width: 100%;
-    margin: 0 50px;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
+
+header nav {
+    height: 60px;
+    padding: 0 20px;
+    
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
-}
-main article.carousel div.carousel-nav div.nav-arrow {
-    width: 50px;
-    height: 50px;
-    background: #ffffff;
-    border-radius: 50%;
-}
-main article.carousel div.carousel-nav div.nav-arrow i {
-    margin: auto;
-}
-main article.carousel div.carousel-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-main article.carousel section.img-carousel {
-    height: 100%;
-    width: 100%;
-    margin: 0 50px;
-    position: relative;
-}
-main article.carousel section.img-carousel div.img-container {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-main article.carousel section.img-carousel div.carousel-desc {
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 15px 15px;
-    color: #FFFFFF;
-    padding: 5% 4%;
-}
-main article.carousel section.img-carousel img {
-    height: 250px;
-    width: 500px;
-    border-radius: 15px;
-    position: relative;
-}
-main article.carousel section.img-carousel#carousel-main img{
-    height: 300px;
-    width: 600px;
-}
-main article.books-list {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-main article.books-list div.books-list-content a {
-    text-decoration: none;
-    color: black;
-    margin: 20px 0;
-}
-main article.books-list div.books-list-content a:hover {
-    text-decoration: underline;
-    color: black;
-    margin: 20px 0;
-}
-main article.books-list div.books-list-title h2 {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-main article.books-list div.books-list-content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-main article.books-list div.books-list-content section.book-card {
-    height: 340px;
-    width: 320px ;
-
-    background: #FFFFFF;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-}
-main article.books-list div.books-list-content section.book-card div.book-desc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 10px;
-}
-main article.books-list div.books-list-content section.book-card div.book-desc h4 {
-    margin: 10px 0;
-}
-main article.books-list div.books-list-content section.book-card div.book-desc p {
-    font-size: 13px;
-}
-nav {
-    height: 60px;
-    width: 100%;
-    padding: 0 20px;
 
     background: #FFFFFF;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
 
-    display: flex;
-    position: fixed;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
+header nav span ul {
+    display: none;
 }
-nav span.sidebar-trigger a {
-    color: #000000;
-}
-nav span.nav-link:hover {
-    cursor: default;
-}
-nav span.nav-link span.dropdown-categories, nav span.nav-link span.dropdown-time {
+
+nav span.nav-link div {
     margin: 0 10px;
-    position: relative;
-    display: inline-block;
 }
-nav div.categories-content {
-    display: block;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-}
-nav div.categories-content ul li {
-    list-style-type: none;
-} 
-nav span.dropdown-categories:hover + div#categories-content{
-    display: block;
-}
-nav span.dropdown-time:hover + div#time-content{
-    display: block;
-}
+
 nav span.nav-search input#search-input {
     height: 35px;
     width: 300px;
@@ -198,31 +49,292 @@ nav span.nav-search input#search-input {
     box-sizing: border-box;
     border-radius: 20px;
     padding: 0 40px;
-    font-family: FontAwesome !important;
+    font-family: FontAwesome, 'Montserrat' !important;
 }
-nav span.nav-icon span {
+
+nav span.nav-icon span{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-right: 40px;
 }
-span.dropdown {
-    margin: 0 10px;
+
+nav span.nav-icon span p {
+    font-size: 25px;
 }
-div#time-content {
-    display: none;
-}
-div#categories-content {
-    display: none;
-}
-img#bookshelf {
+
+nav span img#bookshelf {
     height: 50px;
     width: 50px;
 }
-span.nav-icon {
-    font-size: 25px;
+
+main {
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+}
+
+main article.carousel div.carousel-items {
+    width: 100%;
+}
+
+main article.carousel div.carousel-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1%;
+}
+
+main article.books-list {
+    display: flex;
+    flex-direction: column;
+}
+
+main article.books-list div.books-list-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+main article.books-list div.books-list-title {
+    margin-left: 5%;
+}
+
+main article.books-list div.books-list-content section.book-card {
+    height: 340px;
+    width: 320px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+main article.books-list div.books-list-content section.book-card a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main article.books-list div.books-list-content section.book-card div.book-desc {
+    text-align: center;
+}
+
+main article.books-list div.books-list-content section.book-card div.book-desc p.book-desc-title {
+    margin-top: 5px;
+}
+
+main article.books-list div.books-list-content section.book-card div.book-desc p.book-desc-synopsis {
+    font-weight: lighter;
+}
+
+main article.carousel section.img-carousel {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+main article.carousel section.img-carousel div.img-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+main article.carousel section.img-carousel div.carousel-desc {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 15px 15px;
+    color: #FFFFFF;
+    padding: 3% 4%;
+}   
+
+main article.carousel section.img-carousel img {
+    height: 250px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+main article.carousel section.img-carousel#carousel-main img {
+    height: 300px;
+    }
+
+aside.sidebar {
+    z-index: 1;
+}
+
+aside.sidebar div.sidebar-content {
+    align-items: center;
+}
+
+.sidebar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    height: 100%;
+}
+
+.sidebar.is-visible  ~ .all-content {
+    flex-basis: 100%;
+}
+
+/* Animation */
+.all-content {
+    transition: flex-basis .1s cubic-bezier(.465, .183, .153, .946);
+    will-change: flex-basis;
+}
+
+.sidebar.is-visible  ~ .all-content {
+    transition: flex-basis .3s cubic-bezier(.465, .183, .153, .946);
+}
+
+/* Look n feel */
+* {
+    box-sizing: border-box;
+}
+
+.sidebar-content {
+    display: block;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+.all-content {
+    padding: 20px;
+}
+
+
+div.sidebar-nav {
+    align-self: flex-start;
+}
+
+div.sidebar-nav div.sidebar-items {
+    margin: 15% 0;
+}
+
+div.sidebar-nav div a {
+    text-decoration: none;
+    color: #000000;
+}
+
+div.sidebar-nav div.sidebar-content div.sidebar-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sidebar-nav div.sidebar-content div.sidebar-profile h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* modal */
+div.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    font-family: 'Montserrat', sans-serif;
+}
+div.add-modal-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.modal-header {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 25px;
+    padding: 2px 16px;
+    color: #000000;
+}
+span.close-modal i {
+    float: right;
+    font-size: 28px;
     font-weight: bold;
+}
+span.close-modal:hover,
+span.close-modal:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    margin: 25px 25px;
+    padding: 2px 16px;
+}
+div.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+div.modal-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+button.submit-btn {
+    border: none;
+    font-size: 30px;
+    background: #FBCC38;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 20px 50px;
+}
+.form-label {
+    font-size: 30px;
+    width: 35%;
+}
+.form-input {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 90%;
+    font-size: 30px;
+    color: #C8BABA;
+    padding: 20px 20px;
+}
+
+/* contekan */
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
 }
 
 /* andro or ios */
@@ -245,6 +357,12 @@ span.nav-icon {
         display: none;
     }
     div.form-container {
+        width: 100%;
+    }
+    main article.books-list  div.books-list-content section.book-card {
+        margin: 5% 0;
+    }
+    main article.carousel div.carousel-items section.img-carousel {
         width: 100%;
     }
 } 
