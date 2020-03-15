@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 div.all-content div.sidebar {
     display: none;
@@ -103,6 +104,16 @@ main article.books-list {
     flex-direction: column;
     justify-content: space-around;
 }
+main article.books-list div.books-list-content a {
+    text-decoration: none;
+    color: black;
+    margin: 20px 0;
+}
+main article.books-list div.books-list-content a:hover {
+    text-decoration: underline;
+    color: black;
+    margin: 20px 0;
+}
 main article.books-list div.books-list-title h2 {
     margin-left: 20px;
     margin-bottom: 20px;
@@ -129,6 +140,12 @@ main article.books-list div.books-list-content section.book-card div.book-desc {
     align-items: center;
 
     margin: 0 10px;
+}
+main article.books-list div.books-list-content section.book-card div.book-desc h4 {
+    margin: 10px 0;
+}
+main article.books-list div.books-list-content section.book-card div.book-desc p {
+    font-size: 13px;
 }
 nav {
     height: 60px;
@@ -183,6 +200,13 @@ nav span.nav-search input#search-input {
     padding: 0 40px;
     font-family: FontAwesome !important;
 }
+nav span.nav-icon span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
 span.dropdown {
     margin: 0 10px;
 }
@@ -200,3 +224,27 @@ span.nav-icon {
     font-size: 25px;
     font-weight: bold;
 }
+
+/* andro or ios */
+@media only screen and (max-width: 425px) {
+    nav span.nav-link {
+        display: none;
+    }
+    nav span.nav-search input#search-input {
+        height: 35px;
+        width: 150px;
+        background: #FFFFFF;
+        border: 1px solid #CACACA;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 0 20px;
+        text-align: center;
+        font-family: FontAwesome !important;    
+    }
+    nav span.nav-icon p {
+        display: none;
+    }
+    div.form-container {
+        width: 100%;
+    }
+} 

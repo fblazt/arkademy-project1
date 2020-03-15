@@ -3,33 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Sidebar</title>
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <title>Home</title>
+    <style>
+        html, body  {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: flex-end;
+            font-family: 'Montserrat';
+        }
+
+        div.all-content {
+            display: flex;
+            min-height: 0;
+            flex-direction: column;
+
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 0;
+
+            padding: 0;
+        }
+
+        header nav {
+            height: 60px;
+            padding: 0 20px;
+            
+            justify-content: space-between;
+            align-items: center;
+
+            background: #FFFFFF;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        header nav span ul {
+            display: none;
+        }
+
+        nav span.nav-link div {
+            margin: 0 10px;
+        }
+
+        nav span.nav-search input#search-input {
+            height: 35px;
+            width: 300px;
+            background: #FFFFFF;
+            border: 1px solid #CACACA;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 0 40px;
+            font-family: FontAwesome, 'Montserrat' !important;
+        }
+
+        nav span.nav-icon span{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav span.nav-icon span p {
+            font-size: 25px;
+        }
+
+        nav span img#bookshelf {
+            height: 50px;
+            width: 50px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            z-index: -1;
+        }
+
+        main article.carousel div.carousel-items {
+            width: 100%;
+        }
+
+        main article.carousel div.carousel-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 1%;
+        }
+
+        main article.books-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main article.books-list div.books-list-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            width: 100%;
+        }
+
+        main article.books-list div.books-list-title {
+            margin-left: 5%;
+        }
+
+        main article.books-list div.books-list-content section.book-card {
+            height: 340px;
+            width: 320px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+        }
+
+        main article.books-list div.books-list-content section.book-card a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        main article.books-list div.books-list-content section.book-card div.book-desc {
+            text-align: center;
+        }
+        
+        main article.books-list div.books-list-content section.book-card div.book-desc p.book-desc-title {
+            margin-top: 5px;
+            
+        }
+
+        main article.books-list div.books-list-content section.book-card div.book-desc p.book-desc-synopsis {
+            font-weight: lighter;
+        }
+
+        main article.carousel section.img-carousel {
+            width: 30%;
+            height: 100%;
+            position: relative;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+        }
+
+        main article.carousel section.img-carousel div.img-container {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        main article.carousel section.img-carousel div.carousel-desc {
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0px 0px 15px 15px;
+            color: #FFFFFF;
+            padding: 3% 4%;
+        }   
+
+        main article.carousel section.img-carousel img {
+            height: 250px;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        main article.carousel section.img-carousel#carousel-main img {
+            height: 300px;
+            }
+
+        aside.sidebar {
+            z-index: 1;
+        }
+
+        aside.sidebar div.sidebar-content {
+            align-items: center;
+        }
+
+        .sidebar {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: auto;
+
+            height: 100%;
+        }
+
+        .sidebar.is-visible  ~ .all-content {
+            flex-basis: 100%;
+        }
+
+        /* Animation */
+        .all-content {
+            transition: flex-basis .1s cubic-bezier(.465, .183, .153, .946);
+            will-change: flex-basis;
+        }
+
+        .sidebar.is-visible  ~ .all-content {
+            transition: flex-basis .3s cubic-bezier(.465, .183, .153, .946);
+        }
+
+        /* Look n feel */
+        * {
+            box-sizing: border-box;
+        }
+
+        .sidebar-content {
+            display: block;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .all-content {
+            padding: 20px;
+        }
+
+        
+        div.sidebar-nav {
+            align-self: flex-start;
+        }
+
+        div.sidebar-nav div.sidebar-items {
+            margin: 15% 0;
+        }
+
+        div.sidebar-nav div a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        div.sidebar-nav div.sidebar-content div.sidebar-profile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.sidebar-nav div.sidebar-content div.sidebar-profile h3 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* modal */
+        div.modal {
+            display: none; 
+            position: fixed; 
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+        }
+        div.add-modal-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            border-radius: 20px;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .modal-header {
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 25px;
+            padding: 2px 16px;
+            color: #000000;
+        }
+        span.close-modal i {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        span.close-modal:hover,
+        span.close-modal:focus {
+            color: #ff0000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            margin: 25px 25px;
+            padding: 2px 16px;
+        }
+        div.form-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        div.modal-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        button.submit-btn {
+            border: none;
+            font-size: 30px;
+            background: #FBCC38;
+            border-radius: 15px;
+            color: #ffffff;
+            padding: 20px 50px;
+        }
+        .form-label {
+            font-size: 30px;
+            width: 35%;
+        }
+        .form-input {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            width: 90%;
+            font-size: 30px;
+            color: #C8BABA;
+            padding: 20px 20px;
+        }
+
+        /* contekan */
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* andro or ios */
+        @media only screen and (max-width: 425px) {
+            nav span.nav-link {
+                display: none;
+            }
+            nav span.nav-search input#search-input {
+                height: 35px;
+                width: 150px;
+                background: #FFFFFF;
+                border: 1px solid #CACACA;
+                box-sizing: border-box;
+                border-radius: 20px;
+                padding: 0 20px;
+                text-align: center;
+                font-family: FontAwesome !important;    
+            }
+            nav span.nav-icon p {
+                display: none;
+            }
+            div.form-container {
+                width: 100%;
+            }
+            main article.books-list  div.books-list-content section.book-card {
+                margin: 5% 0;
+            }
+            main article.carousel div.carousel-items section.img-carousel {
+                width: 100%;
+            }
+        } 
+    </style>
 </head>
 <body>
-    <div class="all-content">
-        <div class="sidebar">
-            <aside>
-                <div class="profile-pict">
-
+    <aside class="sidebar is-visible">
+        <div class="sidebar-content flex-col">
+            <div id="sidebar-profile">
+                <img src="assets/img/45584233_524138308054985_5877540939093210292_n.png" alt="">
+                <h3>Niki Zefanya</h3>
+            </div>
+            <div class="sidebar-nav flex-col">
+                <div id="sidebar-explore" class="sidebar-items">
+                    <a href="#">
+                        <b>Explore</b>
+                    </a>
                 </div>
-                <div class="nav-list">
-                    
+                <div id="sidebar-history" class="sidebar-items">
+                    <a href="">
+                        <b>History</b>
+                    </a>
                 </div>
-            </aside>
+                <div id="sidebar-add-book" class="sidebar-items">
+                    <a href="#" id="add-btn">
+                        <b>Add Book*</b>
+                    </a>
+                    <div id="add-modal" class="modal">
+                        <div class="add-modal-content">
+                            <div class="modal-header">
+                                <span>
+                                    <h1>Add Data</h1>
+                                </span>
+                                <span id="close-modal">
+                                    <i class="fas fa-times fa-lg"></i>
+                                </span>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" class="modal-form">
+                                    <div class="form-group">
+                                        <label for="url" class="form-label">Url Image</label>
+                                        <input type="text" class="form-input" name="url" id="url" placeholder="Url Image...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" class="form-input" name="title" id="title" placeholder="Title...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea name="description" class="form-input" id="description" rows="5" placeholder="Description..."></textarea>
+                                    </div>
+                                    <div class="form-group modal-btn">
+                                        <button type="submit" class="submit-btn">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="main-content">
-            <header>
-                <nav>
-                    <span class="sidebar-trigger">
-                        <a href="">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                    <span class="nav-link">
+    </aside>
+    <div class="all-content">
+        <header>
+            <nav class="flex-row">
+                <span id="toggle-sidebar">
+                    <a href="#"><i class="fas fa-bars"></i></a>
+                </span>
+                <span class="nav-link flex-row">
+                    <div>
                         <span class="dropdown-categories"><b>All Categories <i class="fas fa-caret-down"></i></b></span>
                             <div id="categories-content">
                                 <ul>
@@ -37,6 +451,8 @@
                                     <li>Thriller</li>
                                 </ul>
                             </div>
+                    </div>
+                    <div>
                         <span class="dropdown-time"><b>All Time <i class="fas fa-caret-down"></i></b></span>
                             <div id="time-content">
                                 <ul>
@@ -45,92 +461,113 @@
                                     <li>One Week</li>
                                 </ul>
                             </div>
+                    </div>
+                </span>
+                <span class="nav-search">
+                    <input type="text" id="search-input" placeholder="&#xf002; Search book">
+                </span>
+                <span class="nav-icon">
+                    <span>
+                        <img src="assets/img/bookshelf.png" alt="" id="bookshelf">
+                        <h2><b>Library</b></h2>
                     </span>
-                    <span class="nav-search">
-                        <input type="text" id="search-input" placeholder="&#xf002; Search book">
-                    </span>
-                    <span class="nav-icon">
-                        <span>
-                            <img src="assets/img/bookshelf.png" alt="" id="bookshelf">
-                            Library
-                        </span>
-                    </span>
-                </nav>
-            </header>
-            <main>
-                <article class="carousel">
-                    <div class="carousel-nav">
-                        <div class="nav-arrow">
-                            <i class="fas fa-arrow-left"></i>
+                </span>
+            </nav>
+        </header>
+        <main class="flex-col">
+            <article class="carousel">
+                <div class="carousel-items">
+                    <section class="img-carousel">
+                        <div class="image-container">
+                            <img src="assets/img/covernya.png" alt="">
                         </div>
-                        <div class="nav-arrow">
-                            <i class="fas fa-arrow-right"></i>
+                        <div class="carousel-desc">
+                            <h2>Dilan 1990</h2>
+                            <p>gtw sp</p>
                         </div>
-                    </div>
-                    <div class="carousel-items">
-                        <section class="img-carousel">
-                            <div class="image-container">
-                                <img src="assets/img/covernya.png" alt="">
-                            </div>
-                            <div class="carousel-desc">
-                                <h3>Dilan 1990</h3>
-                                <p>gtw sp</p>
-                            </div>
-                        </section>
-                        <section class="img-carousel" id="carousel-main">
-                            <div class="img-container">
-                                <img src="assets/img/d96eff85-ae75-4f56-bdfc-dd7a055e7400.png" alt="">
-                            </div>
-                            <div class="carousel-desc">
-                                <h3>Ubur-ubur Lembur</h3>
-                                <p>Raditya Dika</p>
-                            </div>
-                        </section>
-                        <section class="img-carousel">
-                            <div class="img-container">
-                                <img src="assets/img/laskar.png" alt="">
-                            </div>
-                            <div class="carousel-desc">
-                                <h3>Laskar Pelangi</h3>
-                                <p>Andrea Hirata</p>
-                            </div>
-                        </section>
-                    </div>
-                </article>
-                <article class="books-list">
-                    <div class="books-list-title">
-                        <h2>List Book</h2>
-                    </div>
-                    <div class="books-list-content">
-                        <section class="book-card">
+                    </section>
+                    <section class="img-carousel" id="carousel-main">
+                        <div class="img-container">
+                            <img src="assets/img/d96eff85-ae75-4f56-bdfc-dd7a055e7400.png" alt="">
+                        </div>
+                        <div class="carousel-desc">
+                            <h2>Ubur-ubur Lembur</h2>
+                            <p>Raditya Dika</p>
+                        </div>
+                    </section>
+                    <section class="img-carousel">
+                        <div class="img-container">
+                            <img src="assets/img/laskar.png" alt="">
+                        </div>
+                        <div class="carousel-desc">
+                            <h2>Laskar Pelangi</h2>
+                            <p>Andrea Hirata</p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+            <article class="books-list">
+                <div class="books-list-title">
+                    <h2>List Book</h2>
+                </div>
+                <div class="books-list-content">
+                    <section class="book-card">
+                        <a href="book_detail.html">
                             <div class="img-book">
                                 <img src="assets/img/book-list.png" alt="">
                             </div>
                             <div class="book-desc">
-                                <p><b>Dilan 1990</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
+                                <p class="book-desc-title"><b>Dilan 1990</b></p>
+                                <p class="book-desc-synopsys">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
                             </div>
-                        </section>
-                        <section class="book-card">
-                            <div class="img-book">
-                                <img src="assets/img/977994_346fec47-0d83-4c64-ac50-b3e121e797d0_700_700.png" alt="">
-                            </div>
-                            <div class="book-desc">
-                                <p><b>Sebuah Seni Untuk Bersikap Bodo Amat</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
-                        </section>
-                        <section class="book-card">
-                            <div class="img-book">
-                                <img src="assets/img/3992f708-3a68-412d-b583-e19d6a02df80.png" alt="">
-                            </div>
-                            <div class="book-desc">
-                                <p><b>React Native</b></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
-                        </section>
-                    </div>
-                </article>
-            </main>
-        </div>
+                        </a>
+                    </section>
+                    <section class="book-card">
+                        <div class="img-book">
+                            <img src="assets/img/977994_346fec47-0d83-4c64-ac50-b3e121e797d0_700_700.png" alt="">
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc-title"><b>Sebuah Seni Untuk Bersikap Bodo Amat</b></p>
+                            <p class="book-desc-synopsys">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
+                    </section>
+                    <section class="book-card">
+                        <div class="img-book">
+                            <img src="assets/img/3992f708-3a68-412d-b583-e19d6a02df80.png" alt="">
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc-title"><b>React Native</b></p>
+                            <p class="book-desc-synopsys">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lacus mi, sit amet vehicula nisl consequat id.</p>
+                    </section>
+                </div>
+            </article>
+        </main>
     </div>
+    <script>
+        (function () {
+            var sidebar = document.querySelector('.sidebar');
+
+            document.querySelector('#toggle-sidebar').onclick = function () {
+            sidebar.classList.toggle('is-visible');
+            }
+        })();
+
+        var modal = document.getElementById("add-modal");
+
+        var btn = document.getElementById("add-btn");
+
+        var span = document.getElementById("close-modal");
+
+        btn.onclick = function() {
+            modal.style.cssText = "display: flex; flex-direction: row; justify-content: center; align-items: center;";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
