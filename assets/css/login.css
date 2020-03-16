@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'AirBnb';
+    src: url('../font/airbnb-cereal-app-cufonfonts-webfont/AirbnbCerealBook.woff') format('woff')
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -97,7 +102,7 @@ div.container div.login-content footer{
     flex-direction: row;
 }
 .main-font {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
 }
 .secondary-font {
     font-family: 'Open Sans', sans-serif;
