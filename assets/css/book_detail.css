@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'AirBnb';
+    src: url('../font/airbnb-cereal-app-cufonfonts-webfont/AirbnbCerealBook.woff') format('woff')
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -5,7 +10,7 @@ html, body {
     width: 100%;
 }
 a.borrow-btn {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
 
     font-size: 30px;
     color: #FFFFFF;
@@ -15,7 +20,7 @@ a.borrow-btn {
     padding: 20px 50px;
 }
 button.nav-admin {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
 
     text-decoration: none;
     font-size: 30px;
@@ -38,7 +43,7 @@ div.book-detail	{
     justify-content: space-between;
 }
 div.book-status {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 39px;
     padding: 0 20px;
@@ -54,7 +59,7 @@ div.container {
 div.genre {
     color: #ffffff;
 
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
     font-size: 17px;
     line-height: 22px;
 
@@ -76,7 +81,7 @@ div.nav-arrow {
     align-items: center;
 }
 div.synopsys {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
     margin: 10px 0;
 }
 div.thumbnail {
@@ -98,7 +103,7 @@ button {
     line-height: 39px;
 }
 h3 {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
     font-size: 50px;
     margin: 0;
 }
@@ -120,7 +125,7 @@ main {
     flex-direction: row;
 }
 p#date {
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
     font-size: 20px;
     margin: 0;
 }
@@ -146,7 +151,7 @@ div.modal {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    font-family: Heebo;
+    font-family: 'AirBnb', 'Montserrat', sans-serif;
 }
 div.edit-modal-content {
     display: flex;
