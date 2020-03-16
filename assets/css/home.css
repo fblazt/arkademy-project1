@@ -2,6 +2,8 @@ html, body  {
     width: 100%;
     height: 100%;
     margin: 0;
+    position: relative;
+    z-index: 0;
 }
 
 body {
@@ -20,6 +22,8 @@ div.all-content {
     flex-basis: 0;
 
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 header nav {
@@ -127,6 +131,7 @@ main article.books-list div.books-list-content section.book-card div.book-desc p
 
 main article.books-list div.books-list-content section.book-card div.book-desc p.book-desc-synopsis {
     font-weight: lighter;
+    margin: 0 10px;
 }
 
 main article.carousel section.img-carousel {
@@ -165,7 +170,7 @@ main article.carousel section.img-carousel#carousel-main img {
     }
 
 aside.sidebar {
-    z-index: 1;
+    z-index: 3;
 }
 
 aside.sidebar div.sidebar-content {
