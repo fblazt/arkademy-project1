@@ -60,4 +60,5 @@ div.container#footer div div div span {
 .icon {
     height: 10%;
     width: 10%;
+    filter: invert(100%) sepia(94%) saturate(25%) hue-rotate(21deg) brightness(107%) contrast(106%);
 }
